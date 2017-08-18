@@ -3,10 +3,10 @@
 
 c_process g_process( "csgo.exe" );
 
-constexpr std::ptrdiff_t m_dwLocalPlayer		= 0xAAFFFC;
-constexpr std::ptrdiff_t m_dwClientState		= 0x5A3334;
+constexpr std::ptrdiff_t m_dwLocalPlayer	= 0xAAFFFC;
+constexpr std::ptrdiff_t m_dwClientState	= 0x5A3334;
 constexpr std::ptrdiff_t m_ClientStateAngles	= 0x4D10;
-constexpr std::ptrdiff_t m_vecPunch				= 0x301C;
+constexpr std::ptrdiff_t m_vecPunch		= 0x301C;
 
 void main( ) {
 	if ( !g_process.open_process( ) ) {
