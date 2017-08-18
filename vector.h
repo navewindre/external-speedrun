@@ -27,7 +27,7 @@ public:
 
 public:
 	vec3_t& clamp( ) {
-		x = std::clamp( std::remainderf( x, 180.f ), -89.f, 89.f );
+		x = std::clamp( x, -89.f, 89.f );
 		y = std::clamp( std::remainderf( y, 360.f ), -180.f, 180.f );
 		z = 0.f;
 
