@@ -7,7 +7,7 @@
 class c_process {
 private:
 	HANDLE		m_base{ };
-	int			m_id{ };
+	int		m_id{ };
 	std::string	m_name{ };
 
 public:
@@ -40,7 +40,7 @@ public:
 	}
 
 	uintptr_t get_module( std::string name ) {
-		HANDLE			t32_snapshot;
+		HANDLE		t32_snapshot;
 		MODULEENTRY32	mod_entry;
 
 		if ( !m_id ) return uintptr_t{ };
