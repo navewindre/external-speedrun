@@ -7,7 +7,7 @@
 class c_process {
 private:
 	HANDLE		m_base{ };
-	int		m_id{ };
+	int			m_id{ };
 	std::string	m_name{ };
 
 public:
@@ -53,7 +53,7 @@ public:
 			) {
 			if ( !name.compare( mod_entry.szModule ) ) {
 				CloseHandle( t32_snapshot );
-				printf( "module %s:\t0x%08x\n", mod_entry.szModule, mod_entry.modBaseAddr );
+				printf( "module %s:\t0x%08x\n", mod_entry.szModule, uintptr_t( mod_entry.modBaseAddr ) );
 				return uintptr_t( mod_entry.modBaseAddr );
 			}
 		}
