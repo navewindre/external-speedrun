@@ -4,12 +4,12 @@
 
 c_process g_process( "csgo.exe" );
 
-constexpr std::ptrdiff_t m_dwLocalPlayer		= 0xAA8BBC;
-constexpr std::ptrdiff_t m_dwClientState		= 0x5A4334;
+constexpr std::ptrdiff_t m_dwLocalPlayer	= 0xAA8BBC;
+constexpr std::ptrdiff_t m_dwClientState	= 0x5A4334;
 constexpr std::ptrdiff_t m_ClientStateAngles	= 0x4D10;
-constexpr std::ptrdiff_t m_vecPunch				= 0x301C;
-constexpr std::ptrdiff_t m_fFlags				= 0x100;
-constexpr std::ptrdiff_t m_dwForceJump			= 0x4F1C928;
+constexpr std::ptrdiff_t m_vecPunch		= 0x301C;
+constexpr std::ptrdiff_t m_fFlags		= 0x100;
+constexpr std::ptrdiff_t m_dwForceJump		= 0x4F1C928;
 
 using namespace std::chrono_literals;
 
@@ -39,7 +39,7 @@ void run_bhop( ) {
 
 	auto player_base	= g_process.read< uintptr_t >( g_process.m_client + m_dwLocalPlayer );
 	auto player_flags	= g_process.read< int >( player_base + m_fFlags );
-								/*FL_ONGROUND*/
+				/*FL_ONGROUND*/
 	bool air = !( player_flags & 1 << 0 );
 
 	g_process.write< int >( g_process.m_client + m_dwForceJump, air ? 4 : 6 );
